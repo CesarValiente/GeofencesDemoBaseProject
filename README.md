@@ -109,6 +109,6 @@ Add the listeners after we have removed successfully the Geofences:
 
 Add handle error functions:
 
-	9.10 onnDisconnected()
+	9.10 onDisconnected()
 
 	9.11 onConnectionFailed()		
