@@ -7,11 +7,11 @@ In the demo we are going to follow the next steps, so the way to do it is just f
 
 1- Add Google Play Services as a library.
 
-2- Add Geofence permission:
+2- Add Geofence permission in your Androidmanifest:
 
 	2.1 ACCESS_FINE_LOCATION
 
-3- Check that Google Services apk is installed, include:	 
+3- Check that Google Services apk is installed, include in the MainActivity:	 
 
 	 3.1 servicesConnected() 
 
@@ -19,7 +19,7 @@ In the demo we are going to follow the next steps, so the way to do it is just f
 
 	 3.3 ErrorDialogFragment()
 
-4- Add the follwoing whole classes:
+4- Add the following whole classes in the package data:
 
 	4.1 SimpleGeofence
 
@@ -31,7 +31,9 @@ In the demo we are going to follow the next steps, so the way to do it is just f
 
 	5.2 createRequestPendingIntent() in the GeofenceRequester
 
-6- Add geofences on the GeofenceRequester
+6- In the GeofenceRequester:
+
+Add geofences 
 
 	6.1 getLocationClient()
 
@@ -49,7 +51,7 @@ Check the result returned after add the Geofence:
 
 	6.6 onAddGeofencesResult()
 
-7- ConnectionCallbacks were explained before, here we have to add:
+7- ConnectionCallbacks in the GeofenceRequester, add:
 
 	7.1 onDisconnected()
 
@@ -57,7 +59,7 @@ Handle connection errors, add:
 
 	7.2 onConnectionFailed()
 
-8- Create:
+8- Add de package service, and inside of it the whole class:
 
 	8.1 ReceiveTransitionIntentService
 
@@ -70,6 +72,8 @@ Add the service node to:
 	9.1 removeGeofences() in the MainActivity	
 
 	9.2 getLocationClient() to GeofenceRemover, where we have an instance of this class
+
+The rest is everything in the GeofenceRemover too:
 
 Two different types of remove Geofences:
 
